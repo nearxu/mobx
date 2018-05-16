@@ -23,7 +23,7 @@ class TodoList extends Component {
 
 @observer
 class TodoView extends Component {
-  onToggleCompleted() {
+  onToggleCompleted =() => {
     let todo = this.props.todo;
     todo.completed = !todo.completed;
   }
@@ -34,7 +34,7 @@ class TodoView extends Component {
         <input
           type="checkbox"
           checked={todo.completed}
-          onChange={this.onToggleCompleted.bind(this)}
+          onChange={this.onToggleCompleted}
         />
         {todo.task}
         {todo.assignee ? <small>{todo.assignee.name}</small> : null}
